@@ -68,6 +68,22 @@ Authentication:
 --------------------------------------------
 https://docs.github.com/en/rest/authentication/authenticating-to-the-rest-api?apiVersion=2022-11-28
 
+To perform Oauth:As it cannot be included in the file because it throws violation error while i do git push
+------------------------------------------------------------------------------------------------------------
+package org.authorisation;
+
+import static io.restassured.RestAssured.given;
+
+public class OAuth {
+public static void main(String... args){
+given().auth().oauth2("")
+.when().get(" https://api.github.com/user/repos")
+.then().log().all()
+.assertThat()
+.statusCode(200);
+}
+}
+
 File upload and download:
 ----------------------------------------------
 Async API:
