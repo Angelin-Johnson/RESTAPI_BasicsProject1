@@ -10,7 +10,7 @@ public class BasicAuth {
               .then()
               .log().all()
               .assertThat()
-              .statusCode(200);
+              .statusCode(200);//making
    }
 
 
